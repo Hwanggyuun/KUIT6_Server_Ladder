@@ -1,4 +1,6 @@
 public class Row {
+
+    //todo Node 객체 도입
     private final int[] row;
 
     public Row(int numberOfPerson){
@@ -19,6 +21,7 @@ public class Row {
         return position;
     }
 
+    // todo 매직넘버 -> 래퍼 클래스
     private boolean isLeft(int position) {
         return row[position] == -1;
     }
