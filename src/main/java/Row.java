@@ -3,9 +3,9 @@ public class Row {
     //todo Node 객체 도입
     private final int[] row;
 
-    public Row(int numberOfPerson){
-        validateNumberPerson(numberOfPerson);
-        row = new int[numberOfPerson];
+    public Row(GreaterThanOne numberOfPerson){
+        validateNumberPerson(numberOfPerson.getNumber());
+        row = new int[numberOfPerson.getNumber()];
     }
 
     public int nextPosition(int position){
@@ -21,30 +21,29 @@ public class Row {
         return position;
     }
 
-    // todo 매직넘버 -> 래퍼 클래스
     private boolean isLeft(int position) {
-        return row[position] == -1;
+        return row[position] == Direction.LEFT.getValue();
     }
 
     private boolean isRight(int position) {
-        return row[position] == 1;
+        return row[position] == Direction.RIGHT.getValue();
     }
 
     private void validatePosition(int position) {
         if(position >= row.length || position < 0){
-            throw new IllegalArgumentException("유효하지 않은 위치입니다.");
+            throw new IllegalArgumentException(ErrorMessage.INVALID_POSITION.getMessage());
         }
     }
 
     public void drawLine(int startPosition){
         validateDrawLinePosition(startPosition);
-        row[startPosition] = 1;
-        row[startPosition + 1] = -1;
+        row[startPosition] = Direction.RIGHT.getValue();
+        row[startPosition + 1] = Direction.LEFT.getValue();
     }
 
     private void validateDrawLinePosition(int startPosition) {
         if (startPosition >= row.length -1 || startPosition < 0 || row[startPosition] == -1 || row[startPosition + 1] == 1) {
-            throw new IllegalArgumentException("사다리를 그릴 수 없는 위치입니다.");
+            throw new IllegalArgumentException(ErrorMessage.INVALID_DRAW_POSITION.getMessage());
         }
     }
 
