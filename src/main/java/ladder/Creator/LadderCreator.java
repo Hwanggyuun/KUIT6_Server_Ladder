@@ -8,9 +8,9 @@ public class LadderCreator {
 
     private final Row[] rows;
 
-    public LadderCreator(GreaterThanOne row, GreaterThanOne numberOfPerson) {
-        rows = new Row[numberOfPerson.getNumber()];
-        for (int i = 0; i < numberOfPerson.getNumber(); i++) {
+    public LadderCreator(GreaterThanOne numberOfRows, GreaterThanOne numberOfPerson) {
+        rows = new Row[numberOfRows.getNumber()];
+        for (int i = 0; i < numberOfRows.getNumber(); i++) {
             rows[i] = new Row(numberOfPerson);
         }
     }
