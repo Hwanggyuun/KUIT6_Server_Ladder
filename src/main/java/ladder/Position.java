@@ -1,3 +1,5 @@
+package ladder;
+
 public class Position {
     private int position;
 
@@ -14,7 +16,7 @@ public class Position {
         if (!isPosition(position)) {
             throw new IllegalArgumentException(ErrorMessage.INVALID_LADDER_POSITION.getMessage());
         }
-    } 
+    }
 
     private static boolean isPosition(int position) {
         return position >= 0;

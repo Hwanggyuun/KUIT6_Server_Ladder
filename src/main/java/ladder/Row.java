@@ -1,6 +1,7 @@
+package ladder;
+
 public class Row {
 
-    //todo Node 객체 도입
     private final Node[] nodes;
 
     public Row(GreaterThanOne numberOfPerson){
