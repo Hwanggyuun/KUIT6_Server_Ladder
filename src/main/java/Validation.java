@@ -6,7 +6,7 @@ public class Validation {
         if(Math.abs(leftColumn-rightColumn)!=1) {
             return ErrorMessage.NOT_ADJACENT.getMessage();
         }
-        if(height.current()>rows.length) {
+        if(height.current() >= rows.length) {
             return ErrorMessage.OUT_OF_HEIGHT.getMessage();
         }
         if (leftColumn == rightColumn) return ErrorMessage.SAME_COLUMN.getMessage();

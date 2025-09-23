@@ -13,6 +13,9 @@ public class Index {
     }
 
     public int readValue(int[] line) {
+        if(index<0 || index>=line.length){
+            throw new IndexOutOfBoundsException(ErrorMessage.IndexOutOfBound.getMessage());
+        }
         return line[index];
     }
 
@@ -20,6 +23,9 @@ public class Index {
         this.index++;
     }
     public void sub(){
+        if(this.index<0){
+            throw new IndexOutOfBoundsException(ErrorMessage.IndexOutOfBound.getMessage());
+        }
         this.index--;
     }
 

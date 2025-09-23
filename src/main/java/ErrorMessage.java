@@ -3,6 +3,7 @@ public enum ErrorMessage {
     OUT_OF_HEIGHT("사다리 높이를 초과했습니다."),
     SAME_COLUMN("같은 세로줄에는 선을 그을 수 없습니다."),
     NOT_ADJACENT("두 칸 이상 떨어진 세로줄은 연결할 수 없습니다."),
+    IndexOutOfBound("선택 인덱스는 사이에 있어야 합니다."),
     OUT_OF_NATURE_NUMBER("음수를 입력하셨습니다.");
 
     private final String message;
