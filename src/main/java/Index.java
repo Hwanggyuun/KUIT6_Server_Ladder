@@ -1,17 +1,11 @@
 public class Index {
     private int index;
 
-    public Index(int index){
-        if(index < 0){
-            throw new IllegalArgumentException("Index must be greater than zero");
+    public Index(NaturalNum s){
+        if(s.getNaturalNum() < 0){
+            throw new IllegalArgumentException(ErrorMessage.OUT_OF_NATURE_NUMBER.getMessage());
         }
-        this.index = index-1;
-    }
-    public Index(SelectedIndex s){
-        if(s.getSelectedIndex() < 0){
-            throw new IllegalArgumentException("Index must be greater than zero");
-        }
-        this.index = s.getSelectedIndex()-1;
+        this.index = s.getNaturalNum()-1;
     }
 
     public int getResult(){
@@ -28,13 +22,5 @@ public class Index {
     public void sub(){
         this.index--;
     }
-    public static void checkIndex(int i, Index index){
-        if (i == Rows.LEFT) {
-            index.sub();
-            return;
-        }
-        if (i == Rows.RIGHT) {
-            index.add();
-        }
-    }
+
 }

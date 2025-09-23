@@ -1,21 +1,23 @@
 public class Ladder {
 
     private final Rows rows;
-    public Ladder(int row, int numberOfPerson) {
+
+    public Ladder(NaturalNum row, NaturalNum numberOfPerson) {
         this.rows = new Rows(row, numberOfPerson);
     }
 
-    public int run(SelectedIndex S){
+    public int run(NaturalNum S){
         Index index = new Index(S);
-        for (int[] ints : rows.all()) {
+        for (int[] ints : rows.toMatrix()) {
             int i = index.readValue(ints);
-            Index.checkIndex(i, index);
+            CheckIndex.checkIndex(i, index);
         }
         return index.getResult();
     }
 
-    public void drawLine(int a, int b, Height height) {
-        rows.draw(a,b,height);
+    //todo 싫어
+    public void drawLine(NaturalNum leftColumn, NaturalNum rightColumn, Height height) {
+        rows.draw(leftColumn,rightColumn,height);
     }
 
 
