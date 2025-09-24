@@ -1,6 +1,6 @@
 public enum Direction {
-    LEFT(1),
-    RIGHT(2);
+    RIGHT(1),
+    LEFT(-1);
     private final int direction;
     Direction(int direction) {
         this.direction = direction;
