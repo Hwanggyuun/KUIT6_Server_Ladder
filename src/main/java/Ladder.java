@@ -2,9 +2,13 @@ public class Ladder {
 
     private final Rows rows;
 
-    public Ladder(NaturalNum row, NaturalNum numberOfPerson) {
+    private Ladder(NaturalNum row, NaturalNum numberOfPerson) {
         this.rows = new Rows(row, numberOfPerson);
     }
+    public static Ladder of(NaturalNum row, NaturalNum numberOfPerson) {
+        return new Ladder(row, numberOfPerson);
+    }
+
 
     public int run(NaturalNum S){
         Index index = new Index(S);
@@ -16,8 +20,8 @@ public class Ladder {
     }
 
     //todo 싫어
-    public void drawLine(NaturalNum leftColumn, NaturalNum rightColumn, Height height) {
-        rows.draw(leftColumn,rightColumn,height);
+    public void drawLine(NaturalNum leftColumn,  Height height) {
+        rows.draw(leftColumn,height);
     }
 
 
