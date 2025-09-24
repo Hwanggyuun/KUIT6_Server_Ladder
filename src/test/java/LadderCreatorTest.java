@@ -10,7 +10,7 @@ public class LadderCreatorTest {
     @DisplayName("사다리 생성 확인")
     public void testCreator () throws Exception {
         //given
-        LadderCreator ladderCreator =  LadderCreator.of(NaturalNum.of(2), NaturalNum.of(3));
+        LadderCreator ladderCreator = new LadderCreator(NaturalNum.of(5), NaturalNum.of(4));
         //when
         assertThat(ladderCreator).isNotNull();
     }

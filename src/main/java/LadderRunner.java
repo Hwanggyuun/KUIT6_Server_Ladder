@@ -2,19 +2,19 @@ import java.util.Arrays;
 
 public class LadderRunner {
 
-    private final Rows rows;
+    private final int[][] ladderMatrix;
 
-    private LadderRunner(Rows rows) {
-        this.rows = rows;
+    private LadderRunner(int[][] ladderMatrix) {
+        this.ladderMatrix = ladderMatrix;
     }
 
-    public static LadderRunner of(Rows rows) {
-        return new LadderRunner(rows);
+    public static LadderRunner of(int[][] ladderMatrix) {
+        return new LadderRunner(ladderMatrix);
     }
 
     public int run(NaturalNum S) {
         Index index = new Index(S);
-        int[][] matrix = rows.toMatrix();
+        int[][] matrix = this.ladderMatrix;
         int currentRow = 0;
 
         System.out.println("// " + (index.getResult() - 1) + " 번째로 들어온다.");
