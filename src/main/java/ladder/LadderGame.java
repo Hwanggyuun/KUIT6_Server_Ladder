@@ -1,6 +1,8 @@
 package ladder;
 
 import ladder.Creator.LadderCreator;
+import ladder.Creator.LadderCreatorFactory;
+import ladder.Domain.GreaterThanOne;
 import ladder.Domain.Position;
 import ladder.Domain.Row;
 import ladder.Runner.LadderRunner;
@@ -9,9 +11,13 @@ public class LadderGame {
 
     private final LadderCreator ladderCreator;
 
-    public LadderGame(LadderCreator ladderCreator) {
+    private LadderGame(LadderCreator ladderCreator) {
         this.ladderCreator = ladderCreator;
     }
+    public static LadderGame createLadderGame(LadderCreator ladderCreator) {
+    return new LadderGame(ladderCreator);
+    }
+
 
     public int run(Position position){
 

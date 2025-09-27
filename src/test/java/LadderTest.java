@@ -1,4 +1,6 @@
+import ladder.Constant.LadderType;
 import ladder.Creator.LadderCreator;
+import ladder.Creator.LadderCreatorFactory;
 import ladder.Domain.GreaterThanOne;
 import ladder.LadderGame;
 import ladder.Domain.Position;
@@ -14,8 +16,9 @@ class LadderTest {
     void throwInvalidPersonException() {
         //when
         GreaterThanOne numberOfPerson = GreaterThanOne.from(3);
-        LadderCreator ladderCreator = new LadderCreator(GreaterThanOne.from(2), numberOfPerson);
-        LadderGame ladderGame = new LadderGame(ladderCreator);
+        GreaterThanOne numberOfRows = GreaterThanOne.from(2);
+        LadderCreator ladderCreator = LadderCreatorFactory.getLadderCreator(LadderType.LADDER_TYPE_MANUAL,numberOfPerson,numberOfRows);
+        LadderGame ladderGame = LadderGame.createLadderGame(ladderCreator);
 
         //given
         Position position = Position.from(4);
@@ -31,8 +34,8 @@ class LadderTest {
         //when
         GreaterThanOne row = GreaterThanOne.from(4);
         GreaterThanOne numberOfPerson = GreaterThanOne.from(3);
-        LadderCreator ladderCreator = new LadderCreator(row, numberOfPerson);
-        LadderGame ladderGame = new LadderGame(ladderCreator);
+        LadderCreator ladderCreator = LadderCreatorFactory.getLadderCreator(LadderType.LADDER_TYPE_MANUAL,numberOfPerson,row);
+        LadderGame ladderGame = LadderGame.createLadderGame(ladderCreator);
 
         ladderCreator.drawLine(Position.from(0),Position.from(0));
         ladderCreator.drawLine(Position.from(1),Position.from(1));
@@ -55,5 +58,15 @@ class LadderTest {
 
         //then
         assertThat(ladderGame.run(nthOfPerson)).isEqualTo(0);
+    }
+    @Test
+    @DisplayName("자동사다리 결과 확인")
+    void testAutoLadderResult() {
+        //when
+        GreaterThanOne row = GreaterThanOne.from(4);
+        GreaterThanOne numberOfPerson = GreaterThanOne.from(3);
+        LadderCreator ladderCreator = LadderCreatorFactory.getLadderCreator(LadderType.LADDER_TYPE_AUTO,numberOfPerson,row);
+        LadderGame ladderGame = LadderGame.createLadderGame(ladderCreator);
+
     }
 }
