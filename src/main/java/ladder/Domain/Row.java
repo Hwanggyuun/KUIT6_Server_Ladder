@@ -1,4 +1,7 @@
-package ladder;
+package ladder.Domain;
+
+import ladder.Constant.Direction;
+import ladder.Constant.ErrorMessage;
 
 public class Row {
 
@@ -55,4 +58,22 @@ public class Row {
         return nodes[position.getValue()].isAlreadtSetDirection();
     }
 
+    public void print(){
+        for(Node node : nodes){
+            node.print();
+        }
+        System.out.println();
+    }
+
+    public void currentPrint(Position position){
+        for(int i = 0; i < nodes.length; i++){
+            if(i == position.getValue()){
+                nodes[i].currentPrint(); // 현재 위치 표시
+            } else {
+                nodes[i].print(); // 기존 노드 상태 출력
+            }
+        }
+        System.out.println();
+
+    }
 }

@@ -1,6 +1,6 @@
-import ladder.Direction;
-import ladder.Node;
-import ladder.Position;
+import ladder.Constant.Direction;
+import ladder.Domain.Node;
+import ladder.Domain.Position;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -41,4 +41,11 @@ class NodeTest {
         assertThat(position.getValue()).isEqualTo(0);
     }
 
+        @Test
+        @DisplayName("print 확인")
+        public void  printNode() throws Exception {
+            Node node = Node.from(Direction.LEFT);
+            node.print();
+
+        }
 }

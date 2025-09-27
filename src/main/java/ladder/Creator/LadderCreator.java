@@ -1,8 +1,8 @@
 package ladder.Creator;
 
-import ladder.GreaterThanOne;
-import ladder.Position;
-import ladder.Row;
+import ladder.Domain.GreaterThanOne;
+import ladder.Domain.Position;
+import ladder.Domain.Row;
 
 public class LadderCreator {
 

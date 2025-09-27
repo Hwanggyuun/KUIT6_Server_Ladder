@@ -1,4 +1,6 @@
-package ladder;
+package ladder.Domain;
+
+import ladder.Constant.Direction;
 
 public class Node {
     private Direction direction;
@@ -45,5 +47,14 @@ public class Node {
 
     private boolean isLeft() {
         return direction == Direction.LEFT;
+    }
+
+    public void print() {
+        System.out.print(direction.getValue());
+        System.out.print(" ");
+    }
+    public void currentPrint(){
+        System.out.print(direction.getValue());
+        System.out.print("* ");
     }
 }

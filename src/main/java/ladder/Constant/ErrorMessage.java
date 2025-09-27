@@ -1,4 +1,4 @@
-package ladder;
+package ladder.Constant;
 
 public enum ErrorMessage {
 
